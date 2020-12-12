@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImgProxy", "ImgProxy\ImgProxy.csproj", "{70254408-70C3-4857-B64D-2798453D3233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImgProxy.Tests", "ImgProxy.Tests\ImgProxy.Tests.csproj", "{3F0162C0-FF44-4A0B-917A-DE258E5779E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImgProxy.Benchmarks", "ImgProxy.Benchmarks\ImgProxy.Benchmarks.csproj", "{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70254408-70C3-4857-B64D-2798453D3233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Debug|x64.Build.0 = Debug|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Debug|x86.Build.0 = Debug|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Release|x64.ActiveCfg = Release|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Release|x64.Build.0 = Release|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Release|x86.ActiveCfg = Release|Any CPU
+		{70254408-70C3-4857-B64D-2798453D3233}.Release|x86.Build.0 = Release|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Release|x64.Build.0 = Release|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F0162C0-FF44-4A0B-917A-DE258E5779E0}.Release|x86.Build.0 = Release|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Debug|x64.Build.0 = Debug|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Debug|x86.Build.0 = Debug|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Release|x64.ActiveCfg = Release|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Release|x64.Build.0 = Release|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5DD46F4-61E4-47AE-9C9C-23FA5A07B3EC}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2B66803-D77F-47A0-9E3B-E5F107194929}
+	EndGlobalSection
+EndGlobal
