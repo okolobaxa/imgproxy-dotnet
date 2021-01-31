@@ -20,12 +20,10 @@ namespace ImgProxy.Benchmarks
         const string Extension = Extensions.PNG;
 
 
-        private readonly ImgProxyBuilder _builder = ImgProxy.Create
+        private readonly BasicImgProxyBuilder _builder = BasicImgProxyBuilder.New
             .WithEndpoint(Host)
             .WithCredentials(Key, Salt)
-            .Gravity(Gravity)
-            .Resize(Resize, Width, Height)
-            .Enlarge(Enlarge)
+            .Resize(Resize, Width, Height, Gravity, Enlarge)
             .Extension(Extension);
 
         [Benchmark]
@@ -37,12 +35,10 @@ namespace ImgProxy.Benchmarks
         [Benchmark]
         public void Build()
         {
-            var builder = ImgProxy.Create
+            var builder = BasicImgProxyBuilder.New
                 .WithEndpoint(Host)
                 .WithCredentials(Key, Salt)
-                .Gravity(Gravity)
-                .Resize(Resize, Width, Height)
-                .Enlarge(Enlarge)
+                .Resize(Resize, Width, Height, Gravity, Enlarge)
                 .Extension(Extension);
 
             var url = builder.Build(Url);

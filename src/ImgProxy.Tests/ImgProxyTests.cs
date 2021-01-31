@@ -19,12 +19,10 @@ namespace ImgProxy.Tests
         [Fact]
         public void Build()
         {
-            var url = ImgProxy.Create
+            var url = BasicImgProxyBuilder.New
                 .WithEndpoint(Host)
                 .WithCredentials(Key, Salt)
-                .Gravity(Gravity)
-                .Resize(Resize, Width, Height)
-                .Enlarge(Enlarge)
+                .Resize(Resize, Width, Height, Gravity, Enlarge)
                 .Extension(Extension)
                 .Build(Url);
 
@@ -34,17 +32,15 @@ namespace ImgProxy.Tests
         [Fact]
         public void BuildFromInstance()
         {
-            var builder = ImgProxy.Create
+            var builder = BasicImgProxyBuilder.New
                 .WithEndpoint(Host)
                 .WithCredentials(Key, Salt)
-                .Gravity(Gravity)
-                .Resize(Resize, Width, Height)
-                .Enlarge(Enlarge)
+                .Resize(Resize, Width, Height, Gravity, Enlarge)
                 .Extension(Extension);
 
-            ImgProxy.Instance = builder;
+            BasicImgProxyBuilder.Instance = builder;
 
-            var url = ImgProxy.Instance.Build(Url);
+            var url = BasicImgProxyBuilder.Instance.Build(Url);
 
             Assert.Equal("http://cdn.example.com/_PQ4ytCQMMp-1w1m_vP6g8Qb-Q7yF9mwghf6PddqxLw/fill/300/300/no/1/aHR0cDovL2ltZy5leGFtcGxlLmNvbS9wcmV0dHkvaW1hZ2UuanBn.png", url);
         }
