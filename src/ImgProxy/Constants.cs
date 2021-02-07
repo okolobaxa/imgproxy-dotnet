@@ -36,7 +36,7 @@
         public const string Replicate = "re";
     }
 
-    public static class Extensions
+    public static class Formats
     {
         public const string JPG = "jpg";
         public const string PNG = "png";

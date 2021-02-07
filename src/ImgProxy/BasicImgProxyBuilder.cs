@@ -1,19 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace ImgProxy
 {
+    /// <summary>
+    /// Uses basic URL format that allows the use of all the imgproxy features. User for imgproxy 1.x
+    /// </summary>
     public class BasicImgProxyBuilder : BaseBuilder
     {
+        /// <summary>
+        /// Use to globally cache predefined instance
+        /// </summary>
+        public static BasicImgProxyBuilder Instance { get; set; }
+
+        /// <summary>
+        /// Return new instance of builder
+        /// </summary>
         public static BasicImgProxyBuilder New => new BasicImgProxyBuilder();
 
-        public static BasicImgProxyBuilder Instance { get; set; }
-        
         private BasicImgProxyBuilder() { }
-        
+
+        /// <summary>
+        /// Defines endpoint for the URL
+        /// </summary>
+        /// <param name="host">Url host</param>
         public BasicImgProxyBuilder WithEndpoint(string host)
         {
             base.WithEndpoint(host);
@@ -21,14 +30,27 @@ namespace ImgProxy
             return this;
         }
 
+        /// <summary>
+        ///  Defines key and salt for signing the URL
+        /// </summary>
+        /// <param name="key">hex-encoded key</param>
+        /// <param name="salt">hex-encoded salt</param>
         public BasicImgProxyBuilder WithCredentials(string key, string salt)
         {
             base.WithCredentials(key, salt);
 
             return this;
         }
-        
-        public BasicImgProxyBuilder Resize(string type, int width, int height, string gravity, bool enlarge)
+
+        /// <summary>
+        /// Defines how imgproxy will resize the source image
+        /// </summary>
+        /// <param name="type">Type of resizing. See ResizingTypes for possible values</param>
+        /// <param name="width">Width and height parameters define the size of the resulting image in pixels</param>
+        /// <param name="height">Width and height parameters define the size of the resulting image in pixels</param>
+        /// <param name="gravity">When imgproxy needs to cut some parts of the image, it is guided by the gravity</param>
+        /// <param name="enlarge">When set to true, imgproxy will enlarge the image if it is smaller than the given size.</param>
+        public BasicImgProxyBuilder WithResize(string type, int width, int height, string gravity, bool enlarge)
         {
             var option = new BasicResizeOption(type, width, height, gravity, enlarge);
             
@@ -37,18 +59,25 @@ namespace ImgProxy
             return this;
         }
 
-        public BasicImgProxyBuilder Extension(string extension)
+        /// <summary>
+        /// Defines format of the resulting image
+        /// </summary>
+        /// <param name="format">Resulting format. See Formats for possible values</param>
+        public BasicImgProxyBuilder WithFormat(string format)
         {
-            var formatOption = new FormatOption(extension);
-            
-            AddOption(formatOption);
+            AddOption(new FormatOption(format));
 
             return this;
         }
 
+        /// <summary>
+        /// Build the URL using defined operations
+        /// </summary>
+        /// <param name="url">URL of original image</param>
+        /// <param name="encode">If true, original image URL will be base64-encoded</param>
         public string Build(string url, bool encode = false)
         {
-            return BuildWithFormatAndOptions(url, encode, new Dictionary<string, ImgProxyOption>(), null);
+            return BuildWithFormatAndOptions(url, encode, Options, FormatOption);
         }
     }
 
@@ -76,7 +105,7 @@ namespace ImgProxy
         {
             var enlarge = Enlarge ? BoolStrings.True : BoolStrings.False;
 
-            return $"{Type}:{Width}:{Height}:{enlarge}";
+            return $"{Type}:{Width}:{Height}:{Gravity}:{enlarge}";
         }
     }
 }
