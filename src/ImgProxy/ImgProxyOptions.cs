@@ -18,8 +18,8 @@ namespace ImgProxy
 
         public ResizeOption(string type, int width, int height, bool enlarge = false, bool extend = false)
         {
-            if (height <= 0) throw new ArgumentOutOfRangeException(nameof(height));
-            if (width <= 0) throw new ArgumentOutOfRangeException(nameof(width));
+            if (height < 0) throw new ArgumentOutOfRangeException(nameof(height));
+            if (width < 0) throw new ArgumentOutOfRangeException(nameof(width));
 
             Type = type;
             Width = width;
@@ -88,8 +88,8 @@ namespace ImgProxy
 
         public SizeOption(int width, int height, bool enlarge = false, bool extend = false)
         {
-            if (height <= 0) throw new ArgumentOutOfRangeException(nameof(height));
-            if (width <= 0) throw new ArgumentOutOfRangeException(nameof(width));
+            if (height < 0) throw new ArgumentOutOfRangeException(nameof(height));
+            if (width < 0) throw new ArgumentOutOfRangeException(nameof(width));
 
             Width = width;
             Height = height;
@@ -115,7 +115,7 @@ namespace ImgProxy
 
         public WidthOption(int width)
         {
-            if (width <= 0) throw new ArgumentOutOfRangeException(nameof(width));
+            if (width < 0) throw new ArgumentOutOfRangeException(nameof(width));
 
             Width = width;
         }
@@ -439,7 +439,7 @@ namespace ImgProxy
 
         public HeightOption(int height)
         {
-            if (height <= 0) throw new ArgumentOutOfRangeException(nameof(height));
+            if (height < 0) throw new ArgumentOutOfRangeException(nameof(height));
 
             Height = height;
         }
