@@ -7,7 +7,7 @@ namespace ImgProxy.Benchmarks
     /// dotnet run -c Release --filter *BasicImgProxyBenchmarks*
     /// </summary>
     [MemoryDiagnoser]
-    [SimpleJob(RuntimeMoniker.CoreRt31)]
+    [SimpleJob(RuntimeMoniker.Net60)]
     public class BasicImgProxyBuilderBenchmarks
     {
         const string Key = "736563726574";

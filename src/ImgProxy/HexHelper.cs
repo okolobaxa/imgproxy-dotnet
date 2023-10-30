@@ -28,6 +28,6 @@ namespace ImgProxy
         public static string ByteArrayToUrlSafeBase64(byte[] byteArray) => Convert.ToBase64String(byteArray)
             .TrimEnd('=').Replace('+', '-').Replace('/', '_');
 
-        public static string StringToSafeBase64(string str) => ByteArrayToUrlSafeBase64(Encoding.ASCII.GetBytes(str));
+        public static string StringToSafeBase64(string str) => ByteArrayToUrlSafeBase64(Encoding.UTF8.GetBytes(str));
     }
 }

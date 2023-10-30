@@ -20,13 +20,13 @@ imgproxy can be used to provide a fast and secure way to replace all the image r
 Using .NET CLI
 
 ```
-dotnet add package ImgProxy --version 2.1.0
+dotnet add package ImgProxy --version 2.3.0
 ```
 
 or using Package Manager
 
 ```
-Install-Package ImgProxy -Version 2.1.0
+Install-Package ImgProxy -Version 2.3.0
 ```
 
 # Usage
