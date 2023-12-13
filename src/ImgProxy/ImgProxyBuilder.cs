@@ -52,6 +52,16 @@ namespace ImgProxy
 
             return this;
         }
+        
+        /// <summary>
+        /// Adds 'raw' processing option
+        /// </summary>
+        public ImgProxyBuilder WithRaw()
+        {
+            AddOption(new RawOption());
+
+            return this;
+        }
 
         /// <summary>
         /// Defines format of the resulting image
