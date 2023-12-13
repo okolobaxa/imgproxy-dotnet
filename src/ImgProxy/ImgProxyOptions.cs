@@ -35,6 +35,11 @@ namespace ImgProxy
 
             return $"resize:{Type}:{Width}:{Height}:{enlarge}:{extend}";
         }
+    } 
+    
+    public class RawOption : ImgProxyOption
+    {
+        public override string ToString() => "raw:1";
     }
 
     /// <summary>
